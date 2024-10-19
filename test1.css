@@ -1,0 +1,269 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 5px;
+}
+
+.search-button {
+    padding: 5px;
+}
+
+.buttons button {
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+
+#hero {
+    background-image: url('cool-background12.png');
+    background-size: cover;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 3em;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+#about {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container:hover .text-overlay {
+    opacity: 1;
+}
+
+/* Trending Skills */
+#trending-skills {
+    padding: 40px 20px;
+}
+
+.trending-content {
+    display: flex;
+    gap: 20px;
+}
+
+.trending-category {
+    flex: 1;
+}
+
+.trending-category ul {
+    list-style-type: none;
+}
+
+.trending-category ul li {
+    margin-bottom: 10px;
+}
+/* Styling for the trending skills section */
+#trending-skills {
+    padding: 50px 0;
+    color: rgb(151, 18, 18);
+    text-align: center;
+}
+
+/* General styling for the trending categories */
+.trending-category {
+    position: relative;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    max-width: 250px;
+    margin: 10px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: rgb(8, 8, 8);
+}
+
+.trending-category h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.trending-category a {
+    color: #ffcc00; /* Highlighted link color */
+    font-weight: bold;
+}
+
+.trending-category p, .trending-category ul {
+    color: rgb(249, 247, 247);
+}
+
+.trending-category ul li {
+    list-style-type: none;
+    margin-bottom: 8px;
+}
+
+/* Specific background images for each category */
+
+/* Development background */
+.trending-category:nth-child(1) {
+    background: url('cool-background12.png') no-repeat center center/cover;
+}
+
+/* Business background */
+.trending-category:nth-child(2) {
+    background: url('cool-background12.png') no-repeat center center/cover;
+}
+
+/* Dance background */
+.trending-category:nth-child(3) {
+    background: url('cool-background.png') no-repeat center center/cover;
+}
+
+/* ChatGPT background */
+.trending-category:nth-child(4) {
+    background: url('cool-background12.png') no-repeat center center/cover;
+}
+
+
+/* Services Section (Horizontal Alignment) */
+#services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-wrapper {
+    display: flex;              /* Make the services flex items */
+    justify-content: space-between; /* Align services with space between them */
+    gap: 20px;                  /* Adds space between the service boxes */
+}
+
+.service-box {
+    flex: 1;                    /* Ensure all service boxes have equal width */
+    position: relative;
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.service-box:hover .text-overlay {
+    opacity: 1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

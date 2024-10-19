@@ -1,0 +1,145 @@
+/* Trending Skills */
+#trending-skills {
+    padding: 50px 20px;
+    color: rgb(151, 18, 18);
+    text-align: center;
+}
+
+.trending-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trending-content-wrapper {
+    overflow: hidden; /* Hide overflow */
+    width: 80%; /* Set width for the sliding area */
+}
+
+.trending-content {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.trending-category {
+    position: relative;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    width: 250px; /* Set a fixed width for all categories */
+    height: 200px; /* Set a fixed height for all categories */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: rgb(8, 8, 8);
+}
+
+/* Specific background images for each category */
+.trending-category:nth-child(1) {
+    background: url('cool-background12.png') no-repeat center center/cover;
+}
+
+.trending-category:nth-child(2) {
+    background: url('cool-background.png') no-repeat center center/cover; /* Your business image */
+}
+
+.trending-category:nth-child(3) {
+    background: url('cool-background.png') no-repeat center center/cover; /* Your dance image */
+}
+
+.trending-category:nth-child(4) {
+    background: url('cool-background.png') no-repeat center center/cover; /* Your ChatGPT image */
+}
+
+.trending-category:nth-child(5) {
+    background: url('cool-background.png') no-repeat center center/cover; /* Your design image */
+}
+
+/* Navigation Arrow Styles */
+.arrow {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+.arrow:hover {
+    background-color: #555; /* Darker on hover */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Services Section (Horizontal Alignment) */
+#services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.service-wrapper {
+    display: flex;              /* Make the services flex items */
+    justify-content: space-between; /* Align services with space between them */
+    gap: 20px;                  /* Adds space between the service boxes */
+}
+
+.service-box {
+    flex: 1;                    /* Ensure all service boxes have equal width */
+    position: relative;
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.service-box:hover .text-overlay {
+    opacity: 1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

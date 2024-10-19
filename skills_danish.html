@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Categories</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b22222;
+            margin-bottom: 20px;
+            font-size: 30px; /* Reduced font size */
+        }
+
+        /* Category section styling using grid layout */
+        .category-section {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* More columns */
+            gap: 8px; /* Reduced gap between items */
+            margin-bottom: 30px;
+        }
+
+        /* Styling each skill box */
+        .category {
+            background-color: #ff6347;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            max-width: 180px; /* Reduced width of each category box */
+            margin: 0 auto;
+        }
+
+        /* Image styling */
+        .category img {
+            width: 100%; /* Make the image take up the full width of the box */
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Category title and description */
+        .category p {
+            margin: 4px 0; /* Reduced margin */
+            font-size: 10px;
+        }
+
+        .category span {
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Button styling */
+        .learn-more-btn {
+            background-color: #fff;
+            color: #ff6347;
+            border: none;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #f5f5f5;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #f4f4f4, #4CAF50, #f4f4f4);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 1200px) {
+            .category-section {
+                grid-template-columns: repeat(5, 1fr); /* Adjust for smaller screens */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-section {
+                grid-template-columns: repeat(4, 1fr); /* Adjust for smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .category-section {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Skill Exchange
+</header>
+
+<main>
+    <h1>Explore Categories</h1>
+
+    <!-- Dance Category -->
+    <section class="category-section">
+        <div class="category">
+            <img src="https://images.pexels.com/photos/2010951/pexels-photo-2010951.jpeg" alt="Ballet">
+            <p>Ballet</p>
+            <span>Graceful & Elegant</span>
+            <button type="button" class="learn-more-btn">Select Ballet</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/3756030/pexels-photo-3756030.jpeg" alt="Hip Hop">
+            <p>Hip Hop</p>
+            <span>Urban & Energetic</span>
+            <button type="button" class="learn-more-btn">Select Hip Hop</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/270789/pexels-photo-270789.jpeg" alt="Salsa">
+            <p>Salsa</p>
+            <span>Rhythmic & Passionate</span>
+            <button type="button" class="learn-more-btn">Select Salsa</button>
+        </div>
+        <div class="category">
+            <img src="https://bloximages.newyork1.vip.townnews.com/dothaneagle.com/content/tncms/assets/v3/editorial/e/f7/ef7554de-f70e-11e7-bf95-8318ba8fa279/5a57caac3489d.image.jpg" alt="Tap Dance">
+            <p>Tap Dance</p>
+            <span>Rhythmic & Expressive</span>
+            <button type="button" class="learn-more-btn">Select Tap Dance</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/3739083/pexels-photo-3739083.jpeg" alt="Singing">
+            <p>Singing</p>
+            <span>Melodic & Passionate</span>
+            <button type="button" class="learn-more-btn">Select Singing</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/7269736/pexels-photo-7269736.jpeg" alt="Jazz Singing">
+            <p>Jazz Singing</p>
+            <span>Sharp & Entertaining</span>
+            <button type="button" class="learn-more-btn">Select Jazz Singing</button>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Musical Instruments Category -->
+    <section class="category-section">
+        <div class="category">
+            <img src="https://images.pexels.com/photos/3746033/pexels-photo-3746033.jpeg" alt="Guitar">
+            <p>Guitar</p>
+            <span>Strumming & Harmony</span>
+            <button type="button" class="learn-more-btn">Select Guitar</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/3739531/pexels-photo-3739531.jpeg" alt="Piano">
+            <p>Piano</p>
+            <span>Elegant & Expressive</span>
+            <button type="button" class="learn-more-btn">Select Piano</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/18755762/pexels-photo-18755762.jpeg" alt="Drums">
+            <p>Drums</p>
+            <span>Powerful & Rhythmic</span>
+            <button type="button" class="learn-more-btn">Select Drums</button>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Coding Category -->
+    <section class="category-section">
+        <div class="category">
+            <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg" alt="Web Development">
+            <p>Web Development</p>
+            <span>Interactive & Engaging</span>
+            <button type="button" class="learn-more-btn">Select Web Development</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Data Science">
+            <p>Data Science</p>
+            <span>Analyzing & Predicting</span>
+            <button type="button" class="learn-more-btn">Select Data Science</button>
+        </div>
+        <div class="category">
+            <img src="https://images.pexels.com/photos/3184634/pexels-photo-3184634.jpeg" alt="AI & Machine Learning">
+            <p>AI & Machine Learning</p>
+            <span>Smart & Adaptive</span>
+            <button type="button" class="learn-more-btn">Select AI & Machine Learning</button>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
+

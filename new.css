@@ -1,0 +1,214 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1A1A1A;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    color: #333;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+/* Updated Search Container for Header */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 200px;
+    transition: width 0.4s ease;
+}
+.search-container input:focus {
+    width: 300px;
+}
+.search-button {
+    padding: 8px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+.search-button:hover {
+    background-color: #ffd700;
+}
+.buttons button {
+    padding: 8px 12px;
+    margin-left: 10px;
+}
+/* Video Gallery Section */
+.video-gallery {
+    padding: 20px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #202020, #2F2F2F);
+}
+.video-gallery h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+/* Center the Video Search Bar */
+.video-gallery .search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.video-gallery .search-container input {
+    padding: 15px;
+    width: 60%;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.video-gallery .search-button {
+    padding: 12px 20px;
+    background-color: #444;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.video-gallery .search-button:hover {
+    background-color: #ffcc00;
+    color: #1A1A1A;
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    transition: background-color 0.3s;
+}
+.filter-btn:hover {
+    background-color: #ffcc00;
+    color: #1A1A1A;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.video-card {
+    background-color: #2F2F2F;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+.video-card:hover {
+    transform: scale(1.05);
+}
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+.video-card h3 {
+    margin-top: 10px;
+    color: #ffcc00;
+}
+/* Footer */
+.footer {
+    background: #333;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 10;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Futuristic Button Hover Effects */
+button {
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.6s ease-in-out;
+    transform: translate(-50%, -50%) rotate(45deg);}
+
+button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-gallery h1 {
+        font-size: 2.5em;
+    }
+
+    .video-gallery .search-container input {
+        width: 90%;
+    }
+}

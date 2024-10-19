@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Activity Tracker</title>
+    <!-- Import Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #9fcda7;
+            color: rgb(176, 111, 111);
+        }
+
+        .logo img {
+            width: 120px;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            margin-left: 5px;
+            background-color: #ffffff;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .profile-button, .login-button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button {
+            background-color: #ffffff;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        /* Cards to display overall points and streaks */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .stat-card h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .stat-card p {
+            font-size: 36px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .charts-container {
+            margin-top: 20px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Skill_Exchange2.png" alt="Skill Exchange Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="points.html">Points</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="somethingnew.html">Something New</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Search">
+            <button class="search-button">&#128269;</button>
+        </div>
+        <div class="buttons">
+            <button class="profile-button">Profile</button>
+            <button class="login-button" onclick="window.location.href='login.html';">Login</button>
+        </div>
+    </header>
+
+    <main>
+        <h1>User Progress Overview</h1>
+
+        <!-- Stats Section: Points, Streaks, Total Points -->
+        <section class="stats-container">
+            <div class="stat-card">
+                <h3>Total Points Earned</h3>
+                <p id="totalPoints">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Current Streak</h3>
+                <p id="streakCount">0 Days</p>
+            </div>
+            <div class="stat-card">
+                <h3>Skills Learned</h3>
+                <p id="skillsLearned">0</p>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="charts-container">
+            <!-- Points Over Time Chart -->
+            <h2>Points Earned Over Time</h2>
+            <canvas id="pointsChart" width="400" height="200"></canvas>
+
+            <!-- Activity Frequency Chart -->
+            <h2>Weekly Activity (Sessions Completed)</h2>
+            <canvas id="activityChart" width="400" height="200"></canvas>
+        </section>
+    </main>
+
+    <!-- JavaScript to dynamically populate the page with data and create charts -->
+    <script>
+        // Sample data for demonstration
+        const userData = {
+            totalPoints: 950,
+            currentStreak: 15, // in days
+            skillsLearned: 8,
+            pointsOverTime: [10, 30, 50, 120, 200, 350, 500, 650, 800, 950], // sample points history
+            weeklyActivity: [3, 5, 2, 4, 1, 5, 3], // sample weekly activity (sessions per day)
+        };
+
+        // Populate total points, streak, and skills learned
+        document.getElementById("totalPoints").textContent = userData.totalPoints;
+        document.getElementById("streakCount").textContent = `${userData.currentStreak} Days`;
+        document.getElementById("skillsLearned").textContent = userData.skillsLearned;
+
+        // Points Over Time Chart
+        const ctxPoints = document.getElementById('pointsChart').getContext('2d');
+        const pointsChart = new Chart(ctxPoints, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10'],
+                datasets: [{
+                    label: 'Points',
+                    data: userData.pointsOverTime,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Points'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Weekly Activity Chart
+        const ctxActivity = document.getElementById('activityChart').getContext('2d');
+        const activityChart = new Chart(ctxActivity, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Sessions Completed',
+                    data: userData.weeklyActivity,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(99, 255, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(99, 255, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Sessions'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

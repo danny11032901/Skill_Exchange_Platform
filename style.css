@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/788/713/original/woman-sitting-with-laptop-concept-illustration-for-working-studying-education-work-from-home-healthy-lifestyle-can-use-for-backgrounds-infographics-hero-images-flat-illustration-vector.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(235, 229, 229, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #2E7D32;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-container input {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    width: 200px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-button,
+.like-button {
+    background-color: #2E7D32; /* Background color of the button */
+    color: white; /* Text color of the button */
+    border: none; /* Remove default border */
+    padding: 5px 15px; /* Padding inside the button */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: inline-block; /* Ensure button is treated as inline-block */
+    font-size: 14px; /* Optional: Set font size for better control */
+    font-family: Arial, sans-serif; /* Optional: Set font family for consistency */
+}
+
+.like-button a {
+    color: white; /* Ensure the text inside the <a> tag is white */
+    text-decoration: none; /* Remove underline from <a> tag */
+    display: inline; /* Ensure <a> tag behaves correctly within button */
+}
+
+.like-button a:hover {
+    text-decoration: none; /* Ensure underline is not shown on hover */
+}
+
+
+main {
+    display: flex;
+    height: 90vh;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #ff4500;
+    margin-bottom: 40px;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    margin-right: 20px;
+    text-align: center;
+    position: relative;
+    top: -130px;
+}
+
+.categories {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.category {
+    background-color: #ff6347;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.category img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category p {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.category span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.category button {
+    background-color: #997272;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.category button:hover {
+    background-color: #f5f5f5;
+}
+
+.category a {
+    color: #e9e9e9;
+}
+
+
