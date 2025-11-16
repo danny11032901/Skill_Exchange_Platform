@@ -1,1 +1,1 @@
-This a project for college about a website called skill exchange
+The Skill Exchange Platform is a web-based system where users can learn new skills and teach their own expertise through uploaded videos. It features user registration, secure login, video storage using MongoDB, and a clean admin dashboard for managing users and content. The platform creates a simple, community-driven space for sharing knowledge and improving skills.
